@@ -36,7 +36,7 @@ function checkDriver() {
   return true;
 }
 
-async function loginFacebookGetTrace() {
+async function parserStart() {
   if (!checkDriver()) {
     // 檢查Driver是否是設定，如果無法設定就結束程式
     return;
@@ -96,7 +96,8 @@ async function loginFacebookGetTrace() {
   await driver.sleep(1000);
   await driver.quit();
 }
-loginFacebookGetTrace(); //登入FB取得追蹤者資訊
+
+parserStart();
 
 async function parserContext(driver, url) {
   const card_eles = await driver.wait(until.elementLocated(By.css(url)));

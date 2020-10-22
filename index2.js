@@ -39,7 +39,7 @@ function checkDriver() {
   return true;
 }
 
-async function loginFacebookGetTrace() {
+async function parserStart() {
   if (!checkDriver()) {
     // 檢查Driver是否是設定，如果無法設定就結束程式
     return;
@@ -66,17 +66,6 @@ async function loginFacebookGetTrace() {
     await console.log(_text);
   }
 
-  //   const fb_trace_eles = await driver.wait(
-  //     until.elementsLocated(By.xpath(fb_trace_path))
-  //   );
-  //   for (const card_ele of card_eles) {
-  //     const card_context = await card_ele.getText();
-  //     console.log(card_context);
-  //     // if (card_context.includes("人在追蹤")) {
-  //     //   fb_trace = fb_text;
-  //     //   break;
-  //     // }
-  //   }
   driver.quit();
 }
-loginFacebookGetTrace(); //登入FB取得追蹤者資訊
+parserStart();
